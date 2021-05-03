@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  height: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: rgb(250, 250, 250);
+  padding: 20px;
+  grid-template-rows: 50px 1fr 1fr 30px; /* top 50, bottom 100 and divide the rest btween the two other rows */
+  box-sizing: border-box;
+}
+
+.container div {
+  padding: 1px;
+}
+.header {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+}
+.content {
+  /* background-color: mediumorchid; */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.contact-form {
+  border-radius: 20px;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  background-color: rgb(236, 241, 247);
+}
+
+.footer {
+  /* background-color: yellow; */
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.small-span {
+  font-size: 13px;
+  color: blue;
+  text-transform: uppercase;
+}
+
+
+.avator-contact{
+  width: 5rem;
+  align-self: center;
+  border-radius: 50%;
+  background-color: rgb(44, 16, 199);
+}
