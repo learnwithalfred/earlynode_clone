@@ -1,9 +1,13 @@
-.contact-form {
-  margin: 1.6rem;
-}
+
 
 .small-icons {
   margin-left: 20px;
 
   border-radius: 50px;
+}
+
+.card-color-seperation {
+border-radius: 25px;
+margin-top: 1.6rem;
+
 }

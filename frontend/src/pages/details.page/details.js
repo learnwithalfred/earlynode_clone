@@ -1,8 +1,8 @@
 import React from "react";
 import "./details.styles.css";
 import ContactForm from "../../components/contact-form";
-import Avator from "../../components/avator";
 import Footer from "../../components/footer";
+import MainContent from "../../components/details.content";
 
 const DetailsPage = () => {
   return (
@@ -14,15 +14,7 @@ const DetailsPage = () => {
 
         {/* page content start here */}
         <div className="content">
-          <div>
-            <Avator />
-            <div>
-              <h1>
-                Business Journalist | Editor-in-Chief | Digital Media Company
-                covering SaaS | (m/w/d)<span className="small-span">new</span>
-              </h1>
-            </div>
-          </div>
+         <MainContent/>
         </div>
         {/* page content ends here */}
 
