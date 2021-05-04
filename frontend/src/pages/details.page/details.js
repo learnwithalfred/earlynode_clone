@@ -3,7 +3,7 @@ import "./details.styles.css";
 import ContactForm from "../../components/contact-form";
 import Footer from "../../components/footer";
 import MainContent from "../../components/details.content";
-
+import TermsAndConditions from "../../components/terms.and.conditions";
 const DetailsPage = () => {
   return (
     <>
@@ -27,6 +27,8 @@ const DetailsPage = () => {
         {/* footer goes here */}
         <div className="footer">
           <Footer />
+
+          <TermsAndConditions />
         </div>
         {/* footer end here */}
       </main>

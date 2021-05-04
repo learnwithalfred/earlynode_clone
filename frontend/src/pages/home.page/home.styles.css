@@ -1,24 +1,20 @@
 .home-container {
   width: 100vw;
-  height: 100vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 10px; /* set a gap between the borders*/
+
+  padding: 5rem; 
   box-sizing: border-box;
-  grid-template-rows: 50px 1fr 1fr 100px;
-}
-.header-container {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 1;
-    /* background-color: rgb(245, 26, 161); */
 
 }
 
-.content-body {
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 4;
-  /* background-color: rgb(23, 13, 172); */
+.comapany-info {
+  width: 100%;
+  height: 100%;
+}
+
+
+.main-page-content{
+  margin: 5rem;
+}
+.footer-content{
+  margin: 50px;
 }

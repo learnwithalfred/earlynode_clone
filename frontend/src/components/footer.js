@@ -5,10 +5,7 @@ const Footer = () => (
   <div>
     <Header as="h2" textAlign="center">
       <Header.Content>
-        We hire with{" "}
-        <span>
-          <a href="/">JOIN</a>
-        </span>
+        We hire with <a href="/">JOIN</a>
       </Header.Content>
     </Header>
   </div>

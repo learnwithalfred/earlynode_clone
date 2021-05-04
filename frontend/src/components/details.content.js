@@ -10,6 +10,7 @@ import {
   Menu,
 } from "semantic-ui-react";
 import "./details.content.styles.css";
+import JobDescription from "./job.description";
 
 function content() {
   return (
@@ -133,94 +134,11 @@ function content() {
                     View all open positions
                   </Menu.Menu>
                 </Menu>
-                <Card fluid>
-                  <Card fluid>
-                    <Card.Content>
-                      <Header as="h2">
-                        <Icon name="settings" />
-                        <Header.Content>
-                          <Card.Description>
-                            Business Journalist | Digital Media Company covering
-                            SaaS | (m/w/d)
-                          </Card.Description>
 
-                          <Header.Subheader>
-                            <div>
-                              <Icon name="map marker alternate" size="small" />
-                              <span> Remote</span>
-                              <Icon
-                                className="home-icon"
-                                name="suitcase"
-                                size="small"
-                              />
-                              <span className="icon-span"> Employee</span>
-                            </div>
-                          </Header.Subheader>
-                        </Header.Content>
-                        <Icon position="right" name="arrow right" />
-                      </Header>
-                    </Card.Content>
-                  </Card>
-                </Card>
-                <Card fluid>
-                  <Card fluid>
-                    <Card.Content>
-                      <Header as="h2">
-                        <Icon name="settings" />
-                        <Header.Content>
-                          <Card.Description>
-                            Business Journalist | Digital Media Company covering
-                            SaaS | (m/w/d)
-                          </Card.Description>
+                <JobDescription />
+                <JobDescription />
 
-                          <Header.Subheader>
-                            <div>
-                              <Icon name="map marker alternate" size="small" />
-                              <span> Remote</span>
-                              <Icon
-                                className="home-icon"
-                                name="suitcase"
-                                size="small"
-                              />
-                              <span className="icon-span"> Employee</span>
-                            </div>
-                          </Header.Subheader>
-                        </Header.Content>
-                        <Icon position="right" name="arrow right" />
-                      </Header>
-                    </Card.Content>
-                  </Card>
-                </Card>
-
-                <Card fluid>
-                  <Card fluid>
-                    <Card.Content>
-                      <Header as="h2">
-                        <Icon name="settings" />
-                        <Header.Content>
-                          <Card.Description>
-                            Business Journalist | Digital Media Company covering
-                            SaaS | (m/w/d)
-                          </Card.Description>
-
-                          <Header.Subheader>
-                            <div>
-                              <Icon name="map marker alternate" size="small" />
-                              <span> Remote</span>
-                              <Icon
-                                className="home-icon"
-                                name="suitcase"
-                                size="small"
-                              />
-                              <span className="icon-span"> Employee</span>
-                            </div>
-                          </Header.Subheader>
-                        </Header.Content>
-                        <Icon position="right" name="arrow right" />
-                      </Header>
-                    </Card.Content>
-                  </Card>
-                </Card>
+                <JobDescription />
               </Card.Content>
             </Card>
           </Card.Group>
