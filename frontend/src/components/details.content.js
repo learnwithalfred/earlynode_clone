@@ -136,9 +136,8 @@ function content() {
                 </Menu>
 
                 <JobDescription />
-                <JobDescription />
 
-                <JobDescription />
+
               </Card.Content>
             </Card>
           </Card.Group>

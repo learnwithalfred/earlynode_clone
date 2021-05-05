@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Divider,
@@ -7,98 +7,157 @@ import {
   Menu,
   Input,
   Label,
+  TextArea,
   Header,
 } from "semantic-ui-react";
 import "./forms.styles.css";
 import Avator from "./avator";
 
-const FormExampleForm = () => (
-  <div className="contact-form">
-    <div className="card-color-seperation">
-      <Form>
-        <Avator />
-        <Form.Field>
-          <label>Email</label>
-          <input type="email" placeholder="Email" />
-        </Form.Field>
-        <Form.Field>
-          <label>Password</label>
-          <input type="password" placeholder="Password" />
-        </Form.Field>
-        <Form.Group widths="equal">
-          <Form.Field
-            control={Input}
-            label="First name"
-            placeholder="First name"
+const ApplicationForm = (props) => {
+const initialState = {
+  email: "",
+  firstName: "",
+  lastName: "",
+  phone: "",
+  coverLetter: "",
+};
+
+
+
+  const [application, setApplications] = useState(initialState);
+
+  const handleChange = (name) => (event) => {
+    setApplications({
+      ...application,
+      [name]: event.target.value,
+      id: Date.now,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.addApplicationHandler(application);
+    setApplications(initialState);
+  };
+
+
+
+
+
+
+  return (
+    <div className="Application-form">
+      <div className="card-color-seperation">
+        <form onSubmit={handleSubmit}>
+          <Avator />
+          <Form.Field>
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Email"
+              value={application.email}
+              onChange={handleChange("email")}
+              name="email"
+            />
+          </Form.Field>
+          <Form.Group widths="equal">
+            <Form.Field
+              control={Input}
+              label="First name"
+              placeholder="First name"
+              value={application.firstName}
+              onChange={handleChange("firstName")}
+              name="firstName"
+            />
+            <Form.Field
+              control={Input}
+              label="Last name"
+              placeholder="Last name"
+              value={application.lastName}
+              onChange={handleChange("lastName")}
+              name="lastName"
+            />
+          </Form.Group>
+          <Form.Field>
+            <label>Phone</label>
+            <input
+              value={application.phone}
+              onChange={handleChange("phone")}
+              name="phone"
+              type="tel"
+              placeholder="Phone"
+            />
+          </Form.Field>
+
+          <Menu pointing secondary>
+            Document
+            <Menu.Menu position="right">
+              .doc, .docx, .pdf, .rtf, .txt
+            </Menu.Menu>
+          </Menu>
+          <Form.Field>
+            <Label fluid> CV</Label>
+            <input type="file" />
+          </Form.Field>
+          <Form.Field>
+            <Label fluid> cover letter</Label>
+            <input type="file" />
+          </Form.Field>
+          <TextArea
+            value={application.coverLetter}
+            onChange={handleChange("coverLetter")}
+            name="coverLetter"
+            placeholder="Tell us Why You What To Apply"
           />
-          <Form.Field
-            control={Input}
-            label="Last name"
-            placeholder="Last name"
+          <Form.Field>
+            <Checkbox label="I agree to the Terms and Conditions" />
+          </Form.Field>
+          <Button color="blue" fluid type="submit">
+            Apply Now
+          </Button>
+        </form>
+        <Divider clearing />
+
+        <Header as="h5">
+          Already applied?
+          <span>
+            <br />
+            Check the status of your application
+          </span>
+        </Header>
+
+        <Divider clearing />
+
+        <Header as="h5">Share this job:</Header>
+        <div>
+          <Button href="/" circular color="" icon="mail" />
+          <Button
+            href="/"
+            circular
+            color="facebook"
+            icon="facebook messenger"
           />
-        </Form.Group>
-        <Form.Field>
-          <label>Phone</label>
-          <input type="tel" placeholder="Phone" />
-        </Form.Field>
+          <Button href="/" circular color="twitter" icon="twitter" />
+          <Button href="/" circular color="linkedin" icon="linkedin" />
+          <Button href="/" circular color="green" icon="whatsapp" />
+        </div>
+      </div>
 
-        <Menu pointing secondary>
-          Document
-          <Menu.Menu position="right">.doc, .docx, .pdf, .rtf, .txt</Menu.Menu>
-        </Menu>
-        <Form.Field>
-          <Label fluid> CV</Label>
-          <input type="file" />
-        </Form.Field>
-        <Form.Field>
-          <Label fluid> cover letter</Label>
-          <input type="file" />
-        </Form.Field>
-        <Form.Field>
-          <Checkbox label="I agree to the Terms and Conditions" />
-        </Form.Field>
-        <Button color="blue" fluid type="submit">
-          Apply Now
-        </Button>
-      </Form>
-      <Divider clearing />
-
-      <Header as="h5">
-        Already applied?
-        <span>
-          <br />
-          Check the status of your application
-        </span>
-      </Header>
-
-      <Divider clearing />
-
-      <Header as="h5">Share this job:</Header>
-      <div>
-        <Button href="/" circular color="" icon="mail" />
-        <Button href="/" circular color="facebook" icon="facebook messenger" />
-        <Button href="/" circular color="twitter" icon="twitter" />
-        <Button href="/" circular color="linkedin" icon="linkedin" />
-        <Button href="/" circular color="green" icon="whatsapp" />
+      {/* division goes here */}
+      <div className="card-color-seperation">
+        <Header
+          as="h2"
+          content="No time? Just apply later"
+          subheader="Enter your info below to get a link to this job."
+        />
+        <Input
+          fluid
+          action={{ color: "blue", content: "Send" }}
+          placeholder="Email"
+        />
       </div>
     </div>
+  );
+  }
 
-
-
-  {/* division goes here */}
-    <div className="card-color-seperation">
-      <Header
-        as="h2"
-        content="No time? Just apply later"
-        subheader="Enter your info below to get a link to this job."
-      />
-      <Input
-        fluid
-        action={{ color: "blue", content: "Send" }}
-        placeholder="Email"
-      />
-    </div>
-  </div>
-);
-
-export default FormExampleForm;
+export default ApplicationForm;

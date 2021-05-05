@@ -4,7 +4,16 @@ import ContactForm from "../../components/contact-form";
 import Footer from "../../components/footer";
 import MainContent from "../../components/details.content";
 import TermsAndConditions from "../../components/terms.and.conditions";
-const DetailsPage = () => {
+
+
+
+const DetailsPage = (props) => {
+console.log("props from detail page", props)
+
+
+
+
+
   return (
     <>
       <main className="container">
@@ -14,13 +23,13 @@ const DetailsPage = () => {
 
         {/* page content start here */}
         <div className="content">
-         <MainContent/>
+          <MainContent />
         </div>
         {/* page content ends here */}
 
         {/* constact form start here */}
         <div className="contact-form">
-          <ContactForm />
+          <ContactForm addApplicationHandler={props.addApplicationHandler} />
         </div>
         {/* contact form ends here */}
 

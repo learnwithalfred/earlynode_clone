@@ -7,45 +7,64 @@ import {
 import Home from "./pages/home.page";
 import CourseDetails from "./pages/details.page/details";
 import NotFoundPage from "./pages/404.page/404.Page";
-import NewJob from "./pages/create.job/job.new";
+import Admin from "./pages/admin/admin.page";
 import api from "./api";
 import React, { useEffect, useState } from "react";
 
-
 const App = () => {
   const [jobs, setJobs] = useState([]);
+  const [applications, setApplications] = useState([]);
 
+  //jobs goes here
+  const fetchJobs = async () => {
+    const response = await api.get("/jobsList");
+    return response.data;
+  };
 
-    const fetchJobs = async () => {
-      const response = await api.get("/");
-      return response.data;
+  useEffect(() => {
+    const getAllJobs = async () => {
+      const allJobs = await fetchJobs();
+      if (allJobs) setJobs(allJobs);
+    };
+    getAllJobs();
+  }, []);
+
+  const addJobHandler = async (job) => {
+    const request = {
+      id: Date.now(),
+      ...job,
     };
 
-    useEffect(() => {
-      const getAllJobs = async () => {
-        const allJobs = await fetchJobs();
-        if (allJobs) setJobs(allJobs);
-      };
-      getAllJobs();
-    }, []);
+    const response = await api.post("/jobsList", request);
+    setJobs([...jobs, response.data]);
+  };
 
-    const addJobHandler = async (job) => {
-      const request = {
-        id: Date.now(),
-        ...job,
-      };
+  //applications goes here
 
-      const response = await api.post("/", request);
-      setJobs([...jobs, response.data]);
+  //load all applications
+  const fetchApplications = async () => {
+    const response = await api.get("/applications");
+    return response.data;
+  };
+
+  useEffect(() => {
+    const getAllApplications = async () => {
+      const allApplications = await fetchApplications();
+      if (allApplications) setApplications(allApplications);
+    };
+    getAllApplications();
+  }, []);
+
+  //post application
+
+  const addApplicationHandler = async (application) => {
+    const request = {
+      ...application,
     };
 
-
-
-
-
-
-
-
+    const response = await api.post("/applications", request);
+    setApplications([...applications, response.data]);
+  };
 
   return (
     <Router>
@@ -57,12 +76,25 @@ const App = () => {
             render={(props) => <Home {...props} jobs={jobs} />}
           />
           <Route
-            path="/job/new"
+            path="/admin"
             render={(props) => (
-              <NewJob {...props} addJobHandler={addJobHandler} />
+              <Admin
+                {...props}
+                addJobHandler={addJobHandler}
+                applications={applications}
+              />
             )}
           />
-          <Route path="/details" component={CourseDetails} />
+          <Route
+            path="/jobs/:id"
+            render={(props) => (
+              <CourseDetails
+                {...props}
+                jobs={jobs}
+                addApplicationHandler={addApplicationHandler}
+              />
+            )}
+          />
           <Route path="/404" component={NotFoundPage} />
           <Redirect to="/404" />
         </Switch>

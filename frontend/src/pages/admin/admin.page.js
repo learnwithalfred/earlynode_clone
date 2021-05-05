@@ -1,8 +1,16 @@
 import React, { useState } from "react";
-
-import { Button, TextArea, Container, Header, Form } from "semantic-ui-react";
+import ApplicationsList from "../../components/applications.list";
+import {
+  Button,
+  TextArea,
+  Container,
+  Header,
+  Form,
+  Table,
+} from "semantic-ui-react";
 
 const NewJob = (props) => {
+  //console.log("admin props", props)
   const initialState = {
     companyName: "",
     companyLogo: "",
@@ -27,6 +35,10 @@ const NewJob = (props) => {
     SetJobs(initialState);
     props.history.push("/");
   };
+
+  const renderApplications = props.applications.map(({ id, ...rest }) => {
+    return <ApplicationsList key={id} {...rest} />;
+  });
 
   return (
     <Container fluid>
@@ -122,6 +134,20 @@ const NewJob = (props) => {
           Add Job
         </Button>
       </form>
+
+      {/* here is how we render our applications form */}
+
+      <Table singleLine>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell>Email</Table.HeaderCell>
+            <Table.HeaderCell>Phone</Table.HeaderCell>
+            <Table.HeaderCell>Cover Letter</Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>{renderApplications}</Table.Body>
+      </Table>
     </Container>
   );
 };

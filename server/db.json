@@ -288,5 +288,31 @@
       "task": "",
       "id": 11
     }
+  ],
+  "applications": [
+    {
+      "email": "programmingwithalfred@gmail.com",
+      "firstName": "Alfred",
+      "lastName": "Boateng",
+      "phone": "0541034798",
+      "coverLetter": " i need a job now",
+      "id": 1
+    },
+    {
+      "email": "kwadwo.boateng.alfred@gmail.com",
+      "firstName": "kelvin",
+      "lastName": "agyeman",
+      "phone": "03039023732",
+      "coverLetter": "this is to test if cv will not submit",
+      "id": 2
+    },
+    {
+      "email": "nadia@gmail.com",
+      "firstName": "nadia",
+      "lastName": "boakye",
+      "phone": "09362786732748734",
+      "coverLetter": "i want a job seriously\ni studied programming and i think i can do the job",
+      "id": 3
+    }
   ]
 }

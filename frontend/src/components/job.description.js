@@ -6,9 +6,11 @@ import {
   Image
 } from "semantic-ui-react";
 import "./details.content.styles.css";
+import { Link } from "react-router-dom";
 
 
 const JobDescription = ({
+  id,
   jobTitle,
   jobLocation,
   companyName,
@@ -20,19 +22,24 @@ const JobDescription = ({
       <Card fluid>
         <Card.Content>
           <Header.Content>
-            <Header.Subheader>
-              <Image size="mini" circular src={companyLogo} />
-              <span> {jobTitle}</span>
-              <Icon float="right" name="arrow right" />
+            <Link
+              to={{
+                pathname: `/jobs/{id}`,
+              }}
+            >
               <Header.Subheader>
-                <div>
-                  <Icon name="map marker alternate" size="small" />
-                  <span> Remote</span>
-                  <Icon className="home-icon" name="suitcase" size="small" />
-                  <span className="icon-span"> Employee</span>
-                </div>
+                <Image size="mini" circular src={companyLogo} />
+                <span> {jobTitle}</span>
+                <Header.Subheader>
+                  <div>
+                    <Icon name="map marker alternate" size="small" />
+                    <span> Remote</span>
+                    <Icon className="home-icon" name="suitcase" size="small" />
+                    <span className="icon-span"> Employee</span>
+                  </div>
+                </Header.Subheader>
               </Header.Subheader>
-            </Header.Subheader>
+            </Link>
           </Header.Content>
         </Card.Content>
       </Card>
