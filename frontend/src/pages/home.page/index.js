@@ -10,10 +10,11 @@ import api from "../../api";
 const Home = () => {
   const [jobs, setJobs] = useState([]);
 
+  //fetch jobs from api
   const fetchJobs = async () => {
     const response = await api.get("/");
     return response.data;
-  };
+  }; 
 
   useEffect(() => {
     const getAllJobs = async () => {
@@ -22,6 +23,24 @@ const Home = () => {
     };
     getAllJobs();
   }, []);
+
+
+  const addJobHandler = async (job) => {
+    //console.log(job);
+    const request = {
+      id: Date.now(),
+      ...job,
+    };
+
+    const response = await api.post("/", request);
+    //console.log(response);
+    setJobs([...jobs, response.data]);
+  };
+
+
+
+
+
 
   return (
     <>
