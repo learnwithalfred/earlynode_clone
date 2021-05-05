@@ -1,0 +1,11 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "json server for app",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server -p 5000 --watch db.json"
+  },
+  "author": "alfred boateng",
+  "license": "ISC"
+}
