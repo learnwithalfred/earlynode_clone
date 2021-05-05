@@ -31,7 +31,6 @@
         "voluptate id ullamco fugiat veniam duis",
         "aute ullamco ullamco exercitation velit sunt"
       ],
-
       "lastUpdated": "1 day ago"
     },
     {
@@ -97,7 +96,6 @@
         "deserunt aliquip voluptate aliqua elit quis",
         "consequat labore aliqua duis non amet"
       ],
-
       "lastUpdated": "1 day ago"
     },
     {
@@ -109,7 +107,6 @@
       "jobTitle": "Business Journalist | Digital Media Company covering SaaS | (m/w/d)",
       "subDescription": "EarlyNode is a company builder with a focus on spinning out SaaS and Marketplace Startups.",
       "fullDescription": "Now we are not only launching our own media arm but a separate digital media company with the ambition to build the Nr.1 publication covering all things Software-as-a-Service. We want to build our version of Forbes for SaaS Entrepreneurs, Investors, and Executives.",
-
       "task": [
         "Aute cillum incididunt esse eiusmod magna in laboris ut fugiat adipisicing magna ullamco.",
         "Officia excepteur enim laborum pariatur consequat adipisicing elit sint Lorem et.",
@@ -133,7 +130,6 @@
         "fugiat duis nulla adipisicing fugiat do",
         "laborum proident ullamco adipisicing officia reprehenderit"
       ],
-
       "lastUpdated": "1 day ago"
     },
     {
@@ -243,7 +239,6 @@
       "jobTitle": "newly added me | Entrepreneur in Residence | Startup Tech-Talent Platform Entrepreneur Editor-in-Chief| (m/w/d)",
       "subDescription": "EarlyNode is a company builder with a focus on spinning out SaaS and Marketplace Startups.",
       "fullDescription": "Now we are not only launching our own media arm but a separate digital media company with the ambition to build the Nr.1 publication covering all things Software-as-a-Service. We want to build our version of Forbes for SaaS Entrepreneurs, Investors, and Executives.",
-
       "task": [
         "Consequat ex velit cillum ad ullamco qui incididunt reprehenderit minim aliquip.",
         "Dolor non nisi do commodo.",
@@ -267,6 +262,31 @@
         "labore enim culpa proident culpa incididunt"
       ],
       "lastUpdated": "9 day ago"
+    },
+    {
+      "companyName": "samalot iT",
+      "companyLogo": "dsaf",
+      "aboutCompany": "asdf",
+      "jobLocation": "afsd",
+      "jobTitle": "Developer",
+      "subDescription": "adf",
+      "fullDescription": "fadfads",
+      "requirement": "fads",
+      "task": "asdf",
+      "benefits": "fad",
+      "id": 10
+    },
+    {
+      "companyName": "samalot iT",
+      "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRguFEFN09GkB2ZjWFKuozvZkTsaTgGukOqVA&usqp=CAU",
+      "aboutCompany": "asdf",
+      "jobLocation": "afsd",
+      "jobTitle": "Concise HTML. Semantic UI treats words and classes as exchangeable concepts. Classes use syntax from natural languages like noun/modifier relationships, ...",
+      "subDescription": "adf",
+      "fullDescription": "",
+      "requirement": "",
+      "task": "",
+      "id": 11
     }
   ]
 }

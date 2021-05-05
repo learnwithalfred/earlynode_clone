@@ -1,78 +1,129 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { Button, TextArea, Container, Header, Form } from "semantic-ui-react";
 
-const newJob = () => (
-  <Container fluid>
-    <Header as="h2">add New job</Header>
-    <Form>
-      <Form.Group unstackable widths={2}>
-        <Form.Input
-          label="Company Name"
-          name="companyName"
-          placeholder="Company Name"
-          //   value={}
-          //   onChange={}
-        />
-        <Form.Input
-          label="Company Logo"
-          name="companyLogo"
-          placeholder="Company Logo"
-        />
-      </Form.Group>
-      <Form.Group widths={2}>
-        <Form.Input
-          label="About Company"
-          name="aboutCompany"
-          placeholder="About Company"
-        />
-        <Form.Input
-          label="Job Location"
-          name="jobLocation"
-          placeholder="Job Location"
-        />
-      </Form.Group>
-      <Form.Group widths={2}>
-        <Form.Input
-          label="Name Of Job"
-          name="jobTitle"
-          placeholder="Name Of Job"
-        />
-        <Form.Input
-          label="Short Description"
-          name="subDescription"
-          placeholder="Short Description"
-        />
-      </Form.Group>
+const NewJob = (props) => {
+  const initialState = {
+    companyName: "",
+    companyLogo: "",
+    aboutCompany: "",
+    jobLocation: "",
+    jobTitle: "",
+    subDescription: "",
+    fullDescription: "",
+    requirement: "",
+    task: "",
+  };
 
-      <Form>
-        <TextArea
-          label="Full Description"
-          name="fullDescription"
-          placeholder="Full Description"
-        />
-      </Form>
-      <Form>
-        <TextArea label="benefits" name="benefits" placeholder="benefits" />
-      </Form>
-      <Form>
-        <TextArea
-          label="Qualifications"
-          name="requirement"
-          placeholder="Qualifications"
-        />
-      </Form>
-      <Form>
-        <TextArea
-          label="What Applicant will Do"
-          name="task"
-          placeholder="What Applicant will Do"
-        />
-      </Form>
-    </Form>
+  const [job, SetJobs] = useState(initialState);
 
-    <Form.Checkbox label="I agree to the Terms and Conditions" />
-    <Button type="submit">Submit</Button>
-  </Container>
-);
+  const handleChange = (name) => (event) => {
+    SetJobs({ ...job, [name]: event.target.value, id: Date.now });
+  };
 
-export default newJob;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.addJobHandler(job);
+    SetJobs(initialState);
+    props.history.push("/");
+  };
+
+  return (
+    <Container fluid>
+      <Header as="h2">add New job</Header>
+      <form onSubmit={handleSubmit}>
+        <Form.Group unstackable widths={2}>
+          <input
+            required
+            label="Company Name"
+            name="companyName"
+            placeholder="Company Name"
+            value={job.companyName}
+            onChange={handleChange("companyName")}
+          />
+          <input
+            label="Company Logo"
+            name="companyLogo"
+            placeholder="Company Logo"
+            value={job.companyLogo}
+            onChange={handleChange("companyLogo")}
+          />
+        </Form.Group>
+        <Form.Group widths={2}>
+          <input
+            label="About Company"
+            name="aboutCompany"
+            placeholder="About Company"
+            value={job.aboutCompany}
+            onChange={handleChange("aboutCompany")}
+          />
+          <input
+            label="Job Location"
+            name="jobLocation"
+            placeholder="Job Location"
+            value={job.jobLocation}
+            onChange={handleChange("jobLocation")}
+          />
+        </Form.Group>
+        <Form.Group widths={2}>
+          <input
+            label="Name Of Job"
+            name="jobTitle"
+            placeholder="Name Of Job"
+            value={job.jobTitle}
+            onChange={handleChange("jobTitle")}
+          />
+          <input
+            label="Short Description"
+            name="subDescription"
+            placeholder="Short Description"
+            value={job.subDescription}
+            onChange={handleChange("subDescription")}
+          />
+        </Form.Group>
+
+        <Form>
+          <TextArea
+            label="Full Description"
+            name="fullDescription"
+            placeholder="Full Description"
+            value={job.fullDescription}
+            onChange={handleChange("fullDescription")}
+          />
+        </Form>
+        <Form>
+          <TextArea
+            label="benefits"
+            name="benefits"
+            placeholder="benefits"
+            value={job.benefits}
+            onChange={handleChange("benefits")}
+          />
+        </Form>
+        <Form>
+          <TextArea
+            label="Qualifications"
+            name="requirement"
+            placeholder="Qualifications"
+            value={job.requirement}
+            onChange={handleChange("requirement")}
+          />
+        </Form>
+        <Form>
+          <TextArea
+            label="What Applicant will Do"
+            name="task"
+            placeholder="What Applicant will Do"
+            value={job.task}
+            onChange={handleChange("task")}
+          />
+        </Form>
+        <Button positive size="massive" type="submit">
+          Add Job
+        </Button>
+      </form>
+    </Container>
+  );
+};
+
+export default NewJob;
