@@ -14,15 +14,13 @@ import "./forms.styles.css";
 import Avator from "./avator";
 
 const ApplicationForm = (props) => {
-const initialState = {
-  email: "",
-  firstName: "",
-  lastName: "",
-  phone: "",
-  coverLetter: "",
-};
-
-
+  const initialState = {
+    email: "",
+    firstName: "",
+    lastName: "",
+    phone: "",
+    coverLetter: "",
+  };
 
   const [application, setApplications] = useState(initialState);
 
@@ -39,11 +37,6 @@ const initialState = {
     props.addApplicationHandler(application);
     setApplications(initialState);
   };
-
-
-
-
-
 
   return (
     <div className="Application-form">
@@ -158,6 +151,6 @@ const initialState = {
       </div>
     </div>
   );
-  }
+};
 
 export default ApplicationForm;

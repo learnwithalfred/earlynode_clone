@@ -5,15 +5,7 @@ import Footer from "../../components/footer";
 import MainContent from "../../components/details.content";
 import TermsAndConditions from "../../components/terms.and.conditions";
 
-
-
 const DetailsPage = (props) => {
-console.log("props from detail page", props)
-
-
-
-
-
   return (
     <>
       <main className="container">
@@ -23,7 +15,7 @@ console.log("props from detail page", props)
 
         {/* page content start here */}
         <div className="content">
-          <MainContent />
+          <MainContent jobs={props.jobs} />
         </div>
         {/* page content ends here */}
 
@@ -36,7 +28,6 @@ console.log("props from detail page", props)
         {/* footer goes here */}
         <div className="footer">
           <Footer />
-
           <TermsAndConditions />
         </div>
         {/* footer end here */}

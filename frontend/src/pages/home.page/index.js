@@ -9,7 +9,7 @@ import MainHeader from "../../components/header.main";
 const Home = (props) => {
   const renderJobList = props.jobs.map(({ id, ...rest }) => {
     return <JobDescription {...rest} key={id} />;
-  }).slice(4, 8);
+  });
 
   return (
     <>

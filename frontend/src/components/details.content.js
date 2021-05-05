@@ -12,7 +12,13 @@ import {
 import "./details.content.styles.css";
 import JobDescription from "./job.description";
 
-function content() {
+const content = (props) => {
+  const renderJobList = props.jobs
+    .map(({ id, ...rest }) => {
+      return <JobDescription {...rest} key={id} />;
+    })
+    .slice(4, 8);
+
   return (
     <div>
       <Avator />
@@ -134,10 +140,7 @@ function content() {
                     View all open positions
                   </Menu.Menu>
                 </Menu>
-
-                <JobDescription />
-
-
+                {renderJobList}
               </Card.Content>
             </Card>
           </Card.Group>
@@ -145,6 +148,6 @@ function content() {
       </div>
     </div>
   );
-}
+};
 
 export default content;
