@@ -1,0 +1,21 @@
+.card-links{
+    display: flex;
+    justify-content: space-between;
+    color: darkblue;
+    font-size: 1.4rem;
+}
+
+.admin-go{
+    margin: 4px;  
+}
+
+.admin-go:hover {
+  background-color: rgb(31, 18, 209);
+  color: white;
+
+}
+
+.card-content{
+    font-size: 24px;
+    color: rgb(138,145,155);
+}

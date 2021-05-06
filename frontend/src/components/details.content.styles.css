@@ -1,13 +1,31 @@
-.home-icon{
-    padding-left: 20px;
+.home-icon {
+  padding-left: 20px;
 }
 
-.icon-span{
-    padding-left: 15px;
+.icon-span {
+  padding-left: 15px;
 }
-.job-short-description{
-    margin-top: 30px;
+.job-short-description {
+  margin-top: 30px;
 }
-.text-description{
-    font-size: 20px;
+.text-description {
+  font-size: 20px;
+}
+
+.card-content-container {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.card-content-item {
+  margin-left: 10px;
+}
+
+.job-title {
+  font-size: 37;
+  font-weight: bolder;
+  font-size: 20px;
+
+  color: rgb(54, 63, 74);
 }

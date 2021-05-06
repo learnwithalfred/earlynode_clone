@@ -1,13 +1,7 @@
-import React from 'react'
-import {
-  Header,
-  Icon,
-  Card,
-  Image
-} from "semantic-ui-react";
+import React from "react";
+import { Header, Icon, Card, Image } from "semantic-ui-react";
 import "./details.content.styles.css";
 import { Link } from "react-router-dom";
-
 
 const JobDescription = ({
   id,
@@ -22,14 +16,18 @@ const JobDescription = ({
       <Card fluid>
         <Card.Content>
           <Header.Content>
-            <Link
-              to={{
-                pathname: `/jobs/{id}`,
-              }}
-            >
-              <Header.Subheader>
+            <Header.Subheader className="card-content-container">
+              <div>
                 <Image size="mini" circular src={companyLogo} />
-                <span> {jobTitle}</span>
+              </div>
+              <div className="card-content-item">
+                <Link
+                  to={{
+                    pathname: `/jobs/{id}`,
+                  }}
+                >
+                  <span className="job-title"> {jobTitle}</span>
+                </Link>
                 <Header.Subheader>
                   <div>
                     <Icon name="map marker alternate" size="small" />
@@ -38,8 +36,8 @@ const JobDescription = ({
                     <span className="icon-span"> Employee</span>
                   </div>
                 </Header.Subheader>
-              </Header.Subheader>
-            </Link>
+              </div>
+            </Header.Subheader>
           </Header.Content>
         </Card.Content>
       </Card>
@@ -47,4 +45,4 @@ const JobDescription = ({
   );
 };
 
-export default JobDescription
+export default JobDescription;

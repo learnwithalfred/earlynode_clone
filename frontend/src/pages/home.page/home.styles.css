@@ -1,7 +1,6 @@
 .home-container {
   width: 100vw;
-
-  padding: 5rem; 
+  padding: 5rem 5rem 1px 5rem; 
   box-sizing: border-box;
 
 }
@@ -13,8 +12,17 @@
 
 
 .main-page-content{
-  margin: 5rem;
+  margin: 5rem 7rem 1px 7rem;
 }
 .footer-content{
   margin: 50px;
+}
+
+.category-form{
+  padding-bottom: 4px;
+}
+
+
+.center-content-in{
+  margin:70px;
 }

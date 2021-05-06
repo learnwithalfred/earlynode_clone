@@ -1,3 +1,18 @@
 .main-header-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 50px;
+}
+
+
+.big-header{
+    font-weight: bolder;
+    font-size: 40px;
+    color: rgb(54,63,74);
+}
+
+.small-header{
+    color:rgb(150,156,164)
 }
