@@ -41,8 +41,14 @@ const ApplicationForm = (props) => {
   return (
     <div className="Application-form">
       <div className="card-color-seperation">
-        <form onSubmit={handleSubmit}>
-          <Avator />
+        <Form onSubmit={handleSubmit}>
+          <h5>Intereted?</h5>
+          <Avator
+            img="https://cdn.join.com/5df3a3eaf184b40001ed0d6b/early-node-gmb-h-logo-xl.png"
+            mainText="Ansprechperson"
+            subText="Nikolas Chapoupis"
+            teacmText="Recruiting Team"
+          />
           <Form.Field>
             <label>Email</label>
             <input
@@ -50,6 +56,7 @@ const ApplicationForm = (props) => {
               placeholder="Email"
               value={application.email}
               onChange={handleChange("email")}
+              required
               name="email"
             />
           </Form.Field>
@@ -57,6 +64,7 @@ const ApplicationForm = (props) => {
             <Form.Field
               control={Input}
               label="First name"
+              required
               placeholder="First name"
               value={application.firstName}
               onChange={handleChange("firstName")}
@@ -74,6 +82,7 @@ const ApplicationForm = (props) => {
           <Form.Field>
             <label>Phone</label>
             <input
+            reuired
               value={application.phone}
               onChange={handleChange("phone")}
               name="phone"
@@ -105,11 +114,11 @@ const ApplicationForm = (props) => {
           <Form.Field>
             <Checkbox label="I agree to the Terms and Conditions" />
           </Form.Field>
-          <Button color="blue" fluid type="submit">
+          <Button basic color="blue" fluid type="submit">
             Apply Now
           </Button>
-        </form>
-        <Divider clearing />
+        </Form>
+        {/* <Divider clearing />
 
         <Header as="h5">
           Already applied?
@@ -117,7 +126,7 @@ const ApplicationForm = (props) => {
             <br />
             Check the status of your application
           </span>
-        </Header>
+        </Header> */}
 
         <Divider clearing />
 

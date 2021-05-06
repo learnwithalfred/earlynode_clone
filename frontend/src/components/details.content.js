@@ -8,6 +8,7 @@ import {
   Card,
   Grid,
   Menu,
+  Button
 } from "semantic-ui-react";
 import "./details.content.styles.css";
 import JobDescription from "./job.description";
@@ -21,7 +22,10 @@ const content = (props) => {
 
   return (
     <div>
-      <Avator />
+      <Avator
+        img="https://cdn.join.com/5df3a3eaf184b40001ed0d6b/early-node-gmb-h-logo-xl.png"
+        mainText="EarlyNode GmbH"
+      />
       <div>
         <Header as="h1">
           Business Journalist | Editor-in-Chief | Digital Media Company covering
@@ -92,42 +96,50 @@ const content = (props) => {
 
       <div className="card-container card-color-seperation">
         <Card fluid color="rgb(248,249,250)">
-          <Card.Content>
-            <Card.Header>About EarlyNode GmbH</Card.Header>
-          </Card.Content>
-          <Grid columns={2} padded="vertically">
-            <Grid.Column>
-              <Card.Description>
-                EarlyNode GmbH logo Business Journalist | Digital Media Company
-                covering SaaS | (m/w/d)
-              </Card.Description>
-            </Grid.Column>
-            <Grid.Column>
-              <List>
-                <List.Item>
-                  <List.Icon name="globe" />
-                  <List.Content>earlynode.com</List.Content>
-                </List.Item>
-                <List.Item>
-                  <List.Icon name="group" />
-                  <List.Content>2-10 Mitarbeiter</List.Content>
-                </List.Item>
-                <List.Item>
-                  <List.Icon name="folder" />
-                  <List.Content>
-                    Informationstechnologie (IT) & Software
-                  </List.Content>
-                </List.Item>
-              </List>
-            </Grid.Column>
-          </Grid>
-          <Menu pointing secondary>
-            <Icon name="map marker alternate" />
-            Aachen, Deutschland
-            <Menu.Menu position="right">
-              Show map <Icon name="arrow down" />
-            </Menu.Menu>
-          </Menu>
+          <div className="card-description-mini">
+            <Card.Content>
+              <Card.Header className="job-title">
+                About EarlyNode GmbH
+              </Card.Header>
+            </Card.Content>
+            <Grid columns={2} padded="vertically">
+              <Grid.Column>
+                <Card.Description>
+                  EarlyNode GmbH logo Business Journalist | Digital Media
+                  Company covering SaaS | (m/w/d)
+                </Card.Description>
+              </Grid.Column>
+              <Grid.Column>
+                <List>
+                  <List.Item>
+                    <List.Icon name="globe" />
+                    <List.Content>earlynode.com</List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Icon name="group" />
+                    <List.Content>2-10 Mitarbeiter</List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Icon name="folder" />
+                    <List.Content>
+                      Informationstechnologie (IT) & Software
+                    </List.Content>
+                  </List.Item>
+                </List>
+              </Grid.Column>
+            </Grid>
+            <Menu pointing secondary>
+              <Icon name="map marker alternate" />
+              Aachen, Deutschland
+              <Menu.Menu position="right">
+                <Button basic color="blue">
+                  {" "}
+                  <Icon name="arrow left" />
+                  Go Back
+                </Button>
+              </Menu.Menu>
+            </Menu>
+          </div>
         </Card>
 
         <div className="card-container">
@@ -137,7 +149,10 @@ const content = (props) => {
                 <Menu pointing secondary>
                   Our other open positions
                   <Menu.Menu position="right">
-                    View all open positions
+                    <Button basic color="blue">
+                      {" "}
+                      <a href="/"> View all open positions</a>
+                    </Button>
                   </Menu.Menu>
                 </Menu>
                 {renderJobList}

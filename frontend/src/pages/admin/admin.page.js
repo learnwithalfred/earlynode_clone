@@ -42,8 +42,8 @@ const NewJob = (props) => {
 
   return (
     <Container fluid>
-      <Header as="h2">add New job</Header>
-      <form onSubmit={handleSubmit}>
+      <Header as="h2">Create New job</Header>
+      <Form onSubmit={handleSubmit}>
         <Form.Group unstackable widths={2}>
           <input
             required
@@ -130,13 +130,13 @@ const NewJob = (props) => {
             onChange={handleChange("task")}
           />
         </Form>
-        <Button positive size="massive" type="submit">
-          Add Job
+        <Button basic color="blue" fluid size="massive" type="submit">
+          Create Job
         </Button>
-      </form>
+      </Form>
 
       {/* here is how we render our applications form */}
-
+<h1>Received Applications</h1>
       <Table singleLine>
         <Table.Header>
           <Table.Row>

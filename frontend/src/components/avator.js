@@ -1,20 +1,19 @@
 import React from "react";
+import "./avator.css";
 import { Header, Image } from "semantic-ui-react";
 
-const HeaderExampleImage = () => (
-  <Header as="h2">
-    <Image
-      circular
-      spaced="left"
-      size="massive"
-      src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
-    />
-    <Header.Content>
-      Account Settings
-      <Header.Subheader>Manage your preferences</Header.Subheader>
-      <Header.Subheader>Manage your preferences</Header.Subheader>
-    </Header.Content>
-  </Header>
-);
-
-export default HeaderExampleImage;
+const Avator = (props) => {
+  return (
+    <Header as="h2" className="avator-container">
+      <div>
+        <Image circular spaced="left" size="tiny" src={props.img} />
+      </div>
+      <div className="logo-splace">
+        <Header.Content>{props.mainText}</Header.Content>
+        <Header.Subheader>{props.subText}</Header.Subheader>
+        <Header.Subheader>{props.teacmText}</Header.Subheader>
+      </div>
+    </Header>
+  );
+};
+export default Avator;

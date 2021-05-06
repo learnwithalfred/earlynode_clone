@@ -313,6 +313,38 @@
       "phone": "09362786732748734",
       "coverLetter": "i want a job seriously\ni studied programming and i think i can do the job",
       "id": 3
+    },
+    {
+      "email": "bernard@gmail.com",
+      "firstName": "bernard",
+      "lastName": "armah",
+      "phone": "9823798787432978748327923",
+      "coverLetter": "new here tooooo",
+      "id": 4
+    },
+    {
+      "email": "",
+      "firstName": "",
+      "lastName": "",
+      "phone": "",
+      "coverLetter": "",
+      "id": 5
+    },
+    {
+      "email": "",
+      "firstName": "",
+      "lastName": "",
+      "phone": "",
+      "coverLetter": "",
+      "id": 6
+    },
+    {
+      "email": "",
+      "firstName": "",
+      "lastName": "",
+      "phone": "",
+      "coverLetter": "",
+      "id": 7
     }
   ]
 }
