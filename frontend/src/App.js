@@ -90,7 +90,7 @@ const App = () => {
             render={(props) => (
               <CourseDetails
                 {...props}
-                jobs={jobs}
+                otherAvailableJobs={jobs}
                 addApplicationHandler={addApplicationHandler}
               />
             )}

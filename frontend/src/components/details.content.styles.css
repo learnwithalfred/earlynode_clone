@@ -30,7 +30,10 @@
   color: rgb(54, 63, 74);
 }
 
-
-.card-description-mini{
+.card-description-mini {
   margin: 15px;
+}
+
+.small-span {
+  margin-left: 10px;
 }

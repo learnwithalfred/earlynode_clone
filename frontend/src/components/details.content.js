@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Avator from "./avator";
 import {
   Header,
@@ -8,81 +9,70 @@ import {
   Card,
   Grid,
   Menu,
-  Button
+  Button,
 } from "semantic-ui-react";
 import "./details.content.styles.css";
-import JobDescription from "./job.description";
 
 const content = (props) => {
-  const renderJobList = props.jobs
-    .map(({ id, ...rest }) => {
-      return <JobDescription {...rest} key={id} />;
-    })
-    .slice(4, 8);
+  const {
+    aboutCompany,
+    companyName,
+    jobLocation,
+    companyLogo,
+    jobDescription,
+    jobTitle,
+    benefits,
+    task,
+    requirement,
+  } = props.job;
 
   return (
     <div>
-      <Avator
-        img="https://cdn.join.com/5df3a3eaf184b40001ed0d6b/early-node-gmb-h-logo-xl.png"
-        mainText="EarlyNode GmbH"
-      />
+      <Avator img={companyLogo} mainText={companyName} />
       <div>
         <Header as="h1">
-          Business Journalist | Editor-in-Chief | Digital Media Company covering
-          SaaS | (m/w/d)<span className="small-span">new</span>
+          {jobTitle}
+          <span className="small-span">new</span>
         </Header>
         <div>
           <Icon name="map marker alternate" size="large" />
           <span> Remote</span>
           <Icon className="home-icon" name="suitcase" size="large" />
-          <span className="icon-span"> Angestellter</span>
+          <span className="icon-span"> {jobLocation}</span>
           <Icon className="home-icon" name="folder" size="large" />
           <span className="icon-span"> IT / Services</span>
         </div>
         <div className="job-short-description card-color-seperation">
-          <p className="text-description">
-            EarlyNode is a company builder with a focus on spinning out SaaS and
-            Marketplace Startups.
-          </p>
-          <p className="text-description">
-            Now we are not only launching our own media arm but a separate
-            digital media company with the ambition to build the Nr.1
-            publication covering all things Software-as-a-Service. We want to
-            build our version of Forbes for SaaS Entrepreneurs, Investors, and
-            Executives.
-          </p>
+          <p className="text-description"> {aboutCompany} </p>
+          <p className="text-description">{jobDescription}</p>
         </div>
       </div>
       <div className="job-short-description">
         <Header size="large">Tasks</Header>
-        <h3>Your task</h3>
         <ul>
-          <li>being Editor-in-Chief as well as the first journalist</li>
-          <li>building the content strategy and building the content team</li>
-          <li>producing content and doing original reporting</li>
+          {task && task.length > 1
+            ? task.map((data) => {
+                return <li key={data}>{data}</li>;
+              })
+            : "Details will be privided later"}
         </ul>
         <Header size="large">Requirements</Header>
         <h3>You have...</h3>
-        <li>more than 3 years of experience in business media publications</li>
-        <li>strong interest in SaaS</li>
-        <li>Strong interest in building community</li>
-        <li>
-          Strong communication skills in English, both written and verbal
-        </li>{" "}
-        <li>
-          Strong organizational skills, personal responsibility, and ambition
-        </li>
-        <p>Ideal (not mandatory):</p>
-        <p>Experience as a founder or early/early employee in a startup.</p>
-        <div>
-          <Header size="large">Requirements</Header>
-          <li>100% remote</li>
-          <li>working with an international team</li>
-          <li>
-            personal growth in challenges and various opportunities for further
-            training in all areas of the company
-          </li>
+        {requirement && requirement.length > 1
+          ? requirement.map((data) => {
+              return <li key={data}>{data}</li>;
+            })
+          : "Details will be privided later"}
+
+        <div style={{ marginTop: "50px" }}>
+          <Header size="large">Benefits</Header>
+          {benefits && benefits.length > 1
+            ? benefits.map((data) => {
+                return <li key={data}>{data}</li>;
+              })
+            : "Details will be privided later"}
         </div>
+
         <Divider clearing />
         <List horizontal link>
           <List.Item as="a">
@@ -99,21 +89,18 @@ const content = (props) => {
           <div className="card-description-mini">
             <Card.Content>
               <Card.Header className="job-title">
-                About EarlyNode GmbH
+                About {companyName}
               </Card.Header>
             </Card.Content>
             <Grid columns={2} padded="vertically">
               <Grid.Column>
-                <Card.Description>
-                  EarlyNode GmbH logo Business Journalist | Digital Media
-                  Company covering SaaS | (m/w/d)
-                </Card.Description>
+                <Card.Description>{aboutCompany}</Card.Description>
               </Grid.Column>
               <Grid.Column>
                 <List>
                   <List.Item>
                     <List.Icon name="globe" />
-                    <List.Content>earlynode.com</List.Content>
+                    <List.Content>{companyName}.com</List.Content>
                   </List.Item>
                   <List.Item>
                     <List.Icon name="group" />
@@ -130,12 +117,13 @@ const content = (props) => {
             </Grid>
             <Menu pointing secondary>
               <Icon name="map marker alternate" />
-              Aachen, Deutschland
+              {jobLocation}
               <Menu.Menu position="right">
                 <Button basic color="blue">
-                  {" "}
-                  <Icon name="arrow left" />
-                  Go Back
+                  <Link to="/">
+                    <Icon name="arrow left" />
+                    Go Back
+                  </Link>
                 </Button>
               </Menu.Menu>
             </Menu>
@@ -155,7 +143,6 @@ const content = (props) => {
                     </Button>
                   </Menu.Menu>
                 </Menu>
-                {renderJobList}
               </Card.Content>
             </Card>
           </Card.Group>

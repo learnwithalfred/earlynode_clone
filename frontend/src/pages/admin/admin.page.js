@@ -7,10 +7,11 @@ import {
   Header,
   Form,
   Table,
+  Icon,
 } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const NewJob = (props) => {
-  //console.log("admin props", props)
   const initialState = {
     companyName: "",
     companyLogo: "",
@@ -41,102 +42,91 @@ const NewJob = (props) => {
   });
 
   return (
-    <Container fluid>
-      <Header as="h2">Create New job</Header>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group unstackable widths={2}>
-          <input
-            required
-            label="Company Name"
-            name="companyName"
-            placeholder="Company Name"
-            value={job.companyName}
-            onChange={handleChange("companyName")}
-          />
-          <input
-            label="Company Logo"
-            name="companyLogo"
-            placeholder="Company Logo"
-            value={job.companyLogo}
-            onChange={handleChange("companyLogo")}
-          />
-        </Form.Group>
-        <Form.Group widths={2}>
-          <input
-            label="About Company"
-            name="aboutCompany"
-            placeholder="About Company"
-            value={job.aboutCompany}
-            onChange={handleChange("aboutCompany")}
-          />
-          <input
-            label="Job Location"
-            name="jobLocation"
-            placeholder="Job Location"
-            value={job.jobLocation}
-            onChange={handleChange("jobLocation")}
-          />
-        </Form.Group>
-        <Form.Group widths={2}>
-          <input
-            label="Name Of Job"
-            name="jobTitle"
-            placeholder="Name Of Job"
-            value={job.jobTitle}
-            onChange={handleChange("jobTitle")}
-          />
-          <input
-            label="Short Description"
-            name="subDescription"
-            placeholder="Short Description"
-            value={job.subDescription}
-            onChange={handleChange("subDescription")}
-          />
-        </Form.Group>
+    <Container>
+      <div>
+        <Header as="h1">Admin Page</Header>
+        <Link to="/">
+          <Icon name="arrow alternate circle left" /> Go Back
+        </Link>
+      </div>
 
-        <Form>
-          <TextArea
-            label="Full Description"
-            name="fullDescription"
-            placeholder="Full Description"
-            value={job.fullDescription}
-            onChange={handleChange("fullDescription")}
-          />
+      <div className="create-job-form">
+        <Header as="h2">Create New job</Header>
+
+        <Form onSubmit={handleSubmit}>
+          <Form.Group unstackable widths={2}>
+            <input
+              required
+              label="Company Name"
+              name="companyName"
+              placeholder="Company Name"
+              value={job.companyName}
+              onChange={handleChange("companyName")}
+            />
+            <input
+              label="Company Logo URL"
+              name="companyLogo"
+              placeholder="Company Logo url"
+              value={job.companyLogo}
+              onChange={handleChange("companyLogo")}
+            />
+          </Form.Group>
+          <Form.Group widths={2}>
+            <input
+              label="About Company"
+              name="aboutCompany"
+              placeholder="About Company"
+              value={job.aboutCompany}
+              onChange={handleChange("aboutCompany")}
+            />
+            <input
+              label="Job Location"
+              name="jobLocation"
+              placeholder="Job Location"
+              value={job.jobLocation}
+              onChange={handleChange("jobLocation")}
+            />
+          </Form.Group>
+          <Form.Group widths={2}>
+            <input
+              label="Name Of Job"
+              name="jobTitle"
+              placeholder="Name Of Job"
+              value={job.jobTitle}
+              onChange={handleChange("jobTitle")}
+            />
+            <input
+              label="Short Description"
+              name="subDescription"
+              placeholder="Short Description"
+              value={job.subDescription}
+              onChange={handleChange("subDescription")}
+            />
+          </Form.Group>
+
+          <Form>
+            <TextArea
+              label="Full Description"
+              name="fullDescription"
+              placeholder="Full Description"
+              value={job.fullDescription}
+              onChange={handleChange("fullDescription")}
+            />
+          </Form>
+          <Button
+            style={{ marginTop: "20px" }}
+            primary
+            fluid
+            size="big"
+            type="submit"
+          >
+            Add New Job
+          </Button>
         </Form>
-        <Form>
-          <TextArea
-            label="benefits"
-            name="benefits"
-            placeholder="benefits"
-            value={job.benefits}
-            onChange={handleChange("benefits")}
-          />
-        </Form>
-        <Form>
-          <TextArea
-            label="Qualifications"
-            name="requirement"
-            placeholder="Qualifications"
-            value={job.requirement}
-            onChange={handleChange("requirement")}
-          />
-        </Form>
-        <Form>
-          <TextArea
-            label="What Applicant will Do"
-            name="task"
-            placeholder="What Applicant will Do"
-            value={job.task}
-            onChange={handleChange("task")}
-          />
-        </Form>
-        <Button basic color="blue" fluid size="massive" type="submit">
-          Create Job
-        </Button>
-      </Form>
+      </div>
 
       {/* here is how we render our applications form */}
-<h1>Received Applications</h1>
+      <h1>Received Applications</h1>
       <Table singleLine>
         <Table.Header>
           <Table.Row>

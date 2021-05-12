@@ -50,7 +50,6 @@ const CardPage = () => {
           </div>
           <div className="admin-go">
             <Link to="/admin">
-              {" "}
               <Button basic color="blue">
                 Go To Admin Dashboard
                 <Icon name="arrow right" />

@@ -3,14 +3,14 @@ import { Header, Icon, Card, Image } from "semantic-ui-react";
 import "./details.content.styles.css";
 import { Link } from "react-router-dom";
 
-const JobDescription = ({
-  id,
-  jobTitle,
-  jobLocation,
-  companyName,
-  aboutCompany,
-  companyLogo,
-}) => {
+
+const JobDescription = (props) => {
+  console.log(props, "job deatials sending ocntent");
+  const {
+    id,
+    jobTitle,
+    companyLogo,
+  } = props.job;
   return (
     <Card fluid>
       <Card fluid>
@@ -22,9 +22,7 @@ const JobDescription = ({
               </div>
               <div className="card-content-item">
                 <Link
-                  to={{
-                    pathname: `/jobs/{id}`,
-                  }}
+                  to={{ pathname: `/jobs/${id}`, state: { job: props.job } }}
                 >
                   <span className="job-title"> {jobTitle}</span>
                 </Link>
