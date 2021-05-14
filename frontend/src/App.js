@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/home.page";
 import CourseDetails from "./pages/details.page/details";
-import NotFoundPage from "./pages/404.page/404.Page";
+//import NotFoundPage from "./pages/404.page/404.Page";
 import Admin from "./pages/admin/admin.page";
 import api from "./api";
 import React, { useEffect, useState } from "react";
