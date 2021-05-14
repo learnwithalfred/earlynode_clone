@@ -1,63 +1,134 @@
-# Getting Started with Create React App
+# earlynode_clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+earlynode clone 3
 
-## Available Scripts
+1 set up react app
 
-In the project directory, you can run:sdalkfn/adsnnf
+mkdir earlyNode
+mkdir server for database
 
-### `yarn start`
+`npx create-react-app frontend `
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2.  lets set up our routes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+home
+details
+admin
 
-### `yarn test`
+we will use react reouter dom for that
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+but befrore we do that we will like to set up our pages
 
-### `yarn build`
+in src
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+componets
+pages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+page setup is very crutial so that you can easily maintain your apps once they become big
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+admin
+home
+details
 
-### `yarn eject`
+in home
+index.js
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+rmb to use shortcuts
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+sfc
+imr
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+rmb we are creating 3 pages cos the last apge admin will let us see the submitted applications
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+now lets use react router dom to do our routing
 
-## Learn More
+1 install react router dom
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+yarn add react-router-dom
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+or npm i react-router-dom
 
-### Code Splitting
+clean up app.js
+and set up routing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+in app.js lets import all the pages
 
-### Analyzing the Bundle Size
+follow the react router documentaion to set up routing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+lets add 404 for error pages
 
-### Making a Progressive Web App
+now we have our front end setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+lets talk about seting up our server
 
-### Advanced Configuration
+we will use json server
+follow the documentation
+https://www.npmjs.com/package/json-server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. set up a server directory and do npm init -y
 
+add
+it is in the documentation
+
+    "start":"json-server --watch db.json --port 2021"
+
+to jso file
+
+lets play with the data with postman to see if everything is working
+
+ok
+
+everything setup succesffuly
+
+lets start merging the backend with the fromend
+
+there are sevearal ways
+
+but i will like to keep things simple
+
+so am going to create a folder in the react file and call in api
+
+so in frontend/src create a folder called api
+and add this file index.js
+
+we will use axios for calling apis
+
+install axios
+
+come to the app.js
+
+define a fucntion that calls the api
+
+const fetchJobs = async () => {
+const response = await api.get("/jobs");
+console.log(response.data);
+};
+fetchJobs();
+
+now lets add the data to our app
+we will use react hooks for handling api calls
+
+1 import useState
+
+const [jobs, setJobs] = useState([]);
+
+current state is jobs
+
+thenn setJobs will handle the state change
+
+now lets add details page
+
+1.<Link to={{ pathname: `/jobs/${id}`, state: { jobs: props.job } }}>
+    </>
+
+this link to the details page
+
+we will use withrouter component
+
+lets now add the search functionality on the left of the details page
+
+part 2
+
+application from
+crud
+admin page view
