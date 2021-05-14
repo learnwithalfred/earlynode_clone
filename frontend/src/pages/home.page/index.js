@@ -6,6 +6,7 @@ import Footer from "../../components/footer";
 import PageCard from "../../components/home.card";
 import MainHeader from "../../components/page.layout/header/header.main";
 import CategoriesForm from "../../components/simple.form";
+import LoadingData from "../../components/loading";
 
 const Home = (props) => {
   const renderJobList = props.jobs.map((job) => {
@@ -23,7 +24,7 @@ const Home = (props) => {
               <div className="category-form">
                 <CategoriesForm />
               </div>
-              {renderJobList}
+              {renderJobList.length > 0 ? renderJobList : <LoadingData />}
             </div>
           </div>
         </div>

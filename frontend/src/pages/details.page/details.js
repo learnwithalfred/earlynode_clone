@@ -5,13 +5,16 @@ import Footer from "../../components/footer";
 import JobsDetailsContent from "../../components/details.content";
 import TermsAndConditions from "../../components/page.layout/terms.and.conditions/terms.and.conditions";
 import JobListCard from "../../components/job.description";
+import LoadingData from "../../components/loading";
+
+
 
 const DetailsPage = (props) => {
   const renderJobList = props.otherAvailableJobs
     .map((job) => {
       return <JobListCard job={job} key={job.id} />;
     })
-    .slice(4, 7);
+    .slice(1, 4);
 
   return (
     <>
@@ -20,7 +23,7 @@ const DetailsPage = (props) => {
         <div className="content">
           <JobsDetailsContent job={props.location.state.job} />
 
-          {renderJobList}
+          {renderJobList.length > 0 ? renderJobList : <LoadingData />}
         </div>
 
         <div className="contact-form">

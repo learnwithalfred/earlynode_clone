@@ -16,7 +16,7 @@ const ApplicationsList = ({
         </Table.Cell>
         <Table.Cell>{email}</Table.Cell>
         <Table.Cell>{phone}</Table.Cell>
-        <Table.Cell>{coverLetter}</Table.Cell>
+        <Table.Cell>{coverLetter.slice(0, 60)} . . .</Table.Cell>
       </Table.Row>
     </>
   );

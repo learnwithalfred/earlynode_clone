@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ApplicationsList from "../../components/applications.list";
+import LoadingData from "../../components/loading";
+
 import {
   Button,
   TextArea,
@@ -135,8 +137,10 @@ const NewJob = (props) => {
             <Table.HeaderCell>Phone</Table.HeaderCell>
             <Table.HeaderCell>Cover Letter</Table.HeaderCell>
           </Table.Row>
-        </Table.Header>
-        <Table.Body>{renderApplications}</Table.Body>
+        </Table.Header>{" "}
+        <Table.Body>
+          {renderApplications.length > 0 ? renderApplications : <LoadingData />}
+        </Table.Body>
       </Table>
     </Container>
   );
