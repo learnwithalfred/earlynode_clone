@@ -91,8 +91,8 @@ const App = () => {
             )}
           />
           <Route path="/" render={(props) => <Home {...props} jobs={jobs} />} />
-          <Route path="/404" component={NotFoundPage} />
-          <Redirect to="/404" />
+          {/* <Route path="/404" component={NotFoundPage} />
+          <Redirect to="/404" /> */}
         </Switch>
       </div>
     </Router>
