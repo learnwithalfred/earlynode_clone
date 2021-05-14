@@ -17,7 +17,7 @@ const App = () => {
 
   //jobs goes here
   const fetchJobs = async () => {
-    const response = await api.get("/jobsList");
+    const response = await api.get("/jobs");
     return response.data;
   };
 
@@ -35,7 +35,7 @@ const App = () => {
       ...job,
     };
 
-    const response = await api.post("/jobsList", request);
+    const response = await api.post("/jobs", request);
     setJobs([...jobs, response.data]);
   };
 
@@ -43,7 +43,7 @@ const App = () => {
 
   //load all applications
   const fetchApplications = async () => {
-    const response = await api.get("/applications");
+    const response = await api.get("/application");
     return response.data;
   };
 
@@ -62,7 +62,7 @@ const App = () => {
       ...application,
     };
 
-    const response = await api.post("/applications", request);
+    const response = await api.post("/application", request);
     setApplications([...applications, response.data]);
   };
 
