@@ -16,8 +16,7 @@ app.options("*", cors());
 app.use("/application", applicationRoutes);
 app.use("/jobs", jobRoutes);
 
-const CONNECTION_URL =
-  "mongodb+srv://alfredo:DZATMZsADzOuVHJs@cluster0.3gtvp.mongodb.net/early_node_clone?retryWrites=true&w=majority";
+const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = process.env.PORT || 5000;
 
 mongoose
