@@ -1,5 +1,5 @@
-import axios from "axios";
+import axios from 'axios';
 
 export default axios.create({
-  baseURL: "https://whispering-cliffs-02106.herokuapp.com/",
+    baseURL: 'http://localhost:5000',
 });
