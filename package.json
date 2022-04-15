@@ -1,0 +1,16 @@
+{
+  "name": "early-node-json-server",
+
+  "version": "1.2.0",
+    "engines": {
+    "node": "12.x"
+  },
+  "description": "json server Early node clone website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "https://alfredboateng-portfolio.vercel.app/",
+
+  "license": "ISC"
+}

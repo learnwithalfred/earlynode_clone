@@ -1,5 +1,5 @@
 {
-  "jobsList": [
+  "jobs": [
     {
       "id": 1,
       "companyName": "Kumerica Business World ",
@@ -351,9 +351,21 @@
       "requirement": "",
       "task": "",
       "id": 13
+    },
+    {
+      "companyName": "this is a new job",
+      "companyLogo": "fasjf a sa ",
+      "aboutCompany": "fas d",
+      "jobLocation": " afd",
+      "jobTitle": " fasd",
+      "subDescription": " asfd",
+      "fullDescription": " afsd",
+      "requirement": "",
+      "task": "",
+      "id": 14
     }
   ],
-  "applications": [
+  "application": [
     {
       "email": "programmingwithalfred@gmail.com",
       "firstName": "Alfred",
