@@ -12,6 +12,7 @@
   "author": "https://alfredboateng-portfolio.vercel.app/",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.3",
     "json-server": "^0.17.0"
   }
 }
