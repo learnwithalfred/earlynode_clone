@@ -1,14 +1,12 @@
 const express = require('express');
 const jsonServer = require('json-server')
-const app = express();
 
-app.use((req, res, next) => {
+const server = jsonServer.create()
+
+server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
-
-
-const server = jsonServer.create()
 const router = jsonServer.router('db.json')
 
 
