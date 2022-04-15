@@ -9,7 +9,7 @@ We are going to clone this site.
 
 ### Technologies
 
-- Express.js
+- Express.js, [JSON Server](https://www.npmjs.com/package/json-server)
 - Next.js
 
 ### Features
@@ -28,24 +28,15 @@ You need to install node.js, npm and next.js locally.
 
 ##### Backend setup
 
-- Change directory into the backend folder and install npm packages. You can do it with this command `cd backend && npm install `
-- We are using mongo DB as database so you need to set it up
+We are using a json server which can found in the home directory. Just run `npm install && npm run start`
+start the JSON server
 
-  - First create a mongo database locally or using atlas
-  - Then in you root directory of your application create a .env file. You can do it with this`touch .env` command
-  - Set the CONNECTION_URL for the mongoDB example
+But i have hosted the JSON server `https://early-node-json-server.herokuapp.com/` and it has been linked to the Next.js app in the api folder
 
-  ```
-  CONNECTION_URL : YOUR_CONNECTION_URL_GOES_HERE
-  ```
-
-- You can now stat your application with this command `npm run start`
-
-  - ( If you encounter any challenges, it might come from MongoDB. You can debug and fix it )
 
 ##### Frontend setup
 
-Remember to keep the backend running whiles you run the frontend. You can open a different terminal for the frontend
+Remember to keep the backend running whiles you run the frontend if you want to use the local setup. You can open a different terminal for the frontend
 
 - Change directory into the front end folder and install the npm packages and run the app.
   - I am using npm instead of yarn so my command is `cd frontend && npm i && npm run start `
