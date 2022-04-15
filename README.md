@@ -55,6 +55,6 @@ Remember to keep the backend running whiles you run the frontend. You can open a
 
 If you had any issues please debug.
 
-[Api is live on heroku](https://whispering-cliffs-02106.herokuapp.com/)
+[JSON SERVER is live on heroku](https://early-node-json-server.herokuapp.com/)
 
 [Website is also live on github pages](https://learnwithalfred.github.io/earlynode_clone)
