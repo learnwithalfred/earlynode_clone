@@ -1,6 +1,6 @@
 # Early Node Website clone
 
-![Early Node](early_node.png)
+![Early Node](apply.png)
 
 ## Description
 
