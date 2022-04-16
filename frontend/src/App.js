@@ -1,20 +1,23 @@
+import React, { useEffect, useState } from 'react';
+// import axios from 'axios';
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/home.page';
 import CourseDetails from './pages/details.page/details';
 //import NotFoundPage from "./pages/404.page/404.Page";
 import Admin from './pages/admin/admin.page';
 import api from './api';
-import React, { useEffect, useState } from 'react';
+const  API_URL = "https://early-node-json-server.herokuapp.com"
 
 const App = () => {
-        console.log('server started');
         const [jobs, setJobs] = useState([]);
         const [applications, setApplications] = useState([]);
 
         //jobs goes here
-        const fetchJobs = async() => {
-            const response = await api.get('/jobs');
-            return response.data;
+    const fetchJobs = async () => {
+            const response = await fetch(`${API_URL}/jobs`)
+            const data = await response.json()
+            return data;
         };
 
         useEffect(() => {
@@ -38,10 +41,11 @@ const App = () => {
         //applications goes here
 
         //load all applications
-        const fetchApplications = async() => {
-            const response = await api.get('/application');
-            return response.data;
-        };
+        const fetchApplications = async () => {
+                const response = await fetch(`${API_URL}/application`)
+                const data = await response.json()
+                return data;
+            };
 
         useEffect(() => {
             const getAllApplications = async() => {
