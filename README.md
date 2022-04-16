@@ -29,9 +29,10 @@ You need to install node.js, npm and next.js locally.
 ##### Backend setup
 
 We are using a json server which can found in the home directory. Just run `npm install && npm run start`
+This can be found on `localhost:5000`
 start the JSON server
 
-But i have hosted the JSON server `https://early-node-json-server.herokuapp.com/` and it has been linked to the Next.js app in the api folder
+But I have hosted the JSON server `https://early-node-json-server.herokuapp.com/` and it has been linked to the Next.js app in the api folder
 
 
 ##### Frontend setup
