@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 
 const JobDescription = (props) => {
-  console.log(props, "job deatials sending ocntent");
   const {
     id,
     jobTitle,
