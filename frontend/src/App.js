@@ -62,40 +62,16 @@ const App = () => {
             setApplications([...applications, response.data]);
         };
 
-        return ( <
-            Router >
-            <
-            div >
-            <
-            Switch >
-            <
-            Route path = "/admin"
-            render = {
-                (props) => ( <
-                    Admin {...props }
-                    addJobHandler = { addJobHandler }
-                    applications = { applications }
-                    />
-                )
-            }
-            />{' '} <
-            Route path = "/jobs/:id"
-            render = {
-                (props) => ( <
-                    CourseDetails {...props }
-                    otherAvailableJobs = { jobs }
-                    addApplicationHandler = { addApplicationHandler }
-                    />
-                )
-            }
-            />{' '} <
-            Route path = "/"
-            render = {
-                (props) => < Home {...props }
-                jobs = { jobs }
-                />} / >
-                </Switch> </div> </Router>
-            );
-        };
+    return (
+        <Router >
+            <div >
+                <Switch >
+                    <Route path = "/admin" render = {(props) => ( <Admin {...props } addJobHandler = { addJobHandler } applications = { applications }/>)}/>
+                    <Route path = "/jobs/:id" render = { (props) => ( <CourseDetails {...props } otherAvailableJobs = { jobs } addApplicationHandler = { addApplicationHandler }/>)}/>
+                    <Route path="/" render={(props) => < Home {...props} jobs={jobs} />} />
+                </Switch>
+            </div>
+        </Router>
+    )};
 
-        export default App;
+    export default App;
